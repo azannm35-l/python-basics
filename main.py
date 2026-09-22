@@ -14,7 +14,7 @@ bank.add_account(account2)
 
 bank.add_account(account3)
 
-acc_no=int(input("Enter your account number: "))
+acc_no=int(input("Enter your account number:"))
 result=bank.search_account(acc_no)
 if result:
     print("Account found")
@@ -22,4 +22,6 @@ if result:
     print("account name =",result.name)
     print("Account balance",result.balance)
 else:
-    print("account not found")
+    print("account not found ok")
+# this is An bank system = by Azan 
+

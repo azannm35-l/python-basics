@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banking System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Welcome</p>
+          <h1>Banking System</h1>
+        </div>
+        <button id="resetButton" class="secondary-btn">Reset Demo</button>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel search-panel">
+          <h2>Find account</h2>
+          <form id="searchForm" class="stack">
+            <label for="accountNumber">Account number</label>
+            <input id="accountNumber" type="number" placeholder="Enter account number" required />
+            <button type="submit" class="primary-btn">Search</button>
+          </form>
+
+          <div class="separator"></div>
+
+          <h3>Add new account</h3>
+          <form id="addAccountForm" class="stack">
+            <label for="newName">Account holder</label>
+            <input id="newName" type="text" placeholder="Full name" required />
+
+            <label for="newBalance">Opening balance</label>
+            <input id="newBalance" type="number" min="0" step="100" placeholder="0" required />
+
+            <button type="submit" class="secondary-btn">Create account</button>
+          </form>
+        </section>
+
+        <section class="panel account-panel">
+          <div id="accountCard" class="account-card empty-state">
+            <h2>Account details</h2>
+            <p>Select an account to view information.</p>
+          </div>
+
+          <div id="actions" class="hidden actions">
+            <h3>Transactions</h3>
+            <form id="depositForm" class="transaction-form">
+              <label for="depositAmount">Deposit</label>
+              <div class="inline-field">
+                <input id="depositAmount" type="number" min="1" step="100" placeholder="Amount" required />
+                <button type="submit" class="primary-btn">Deposit</button>
+              </div>
+            </form>
+
+            <form id="withdrawForm" class="transaction-form">
+              <label for="withdrawAmount">Withdraw</label>
+              <div class="inline-field">
+                <input id="withdrawAmount" type="number" min="1" step="100" placeholder="Amount" required />
+                <button type="submit" class="danger-btn">Withdraw</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <div id="message" class="message" aria-live="polite"></div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
